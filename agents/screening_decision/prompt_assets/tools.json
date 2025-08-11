@@ -10,39 +10,75 @@
           "description": "Descriptive title for the intervention decision"
         },
         "body": {
-          "type": "string", 
+          "type": "string",
           "description": "Detailed body explaining the intervention need"
         },
         "decision_type": {
           "type": "string",
-          "enum": ["clinician_question", "information_request", "special_accommodation", "scheduling_conflict"],
+          "enum": [
+            "clinician_question",
+            "information_request",
+            "special_accommodation",
+            "scheduling_conflict"
+          ],
           "description": "Type of intervention needed"
         },
         "priority": {
           "type": "string",
-          "enum": ["low", "medium", "high"],
+          "enum": [
+            "low",
+            "medium",
+            "high"
+          ],
           "description": "Priority level for the intervention"
         },
         "quoted_excerpts": {
           "type": "array",
-          "items": {"type": "string"},
+          "items": {
+            "type": "string"
+          },
           "description": "Relevant quoted excerpts from the conversation"
         },
         "ai_reasoning": {
           "type": "string",
           "description": "AI reasoning for why this intervention is needed"
         },
-        "team_id": {"type": "string", "description": "Team ID for access control"},
-        "client_id": {"type": "string", "description": "Client ID for access control"},
-        "job_posting_match_id": {"type": "string", "description": "Job posting match ID"},
-        "clinician_id": {"type": "string", "description": "Clinician ID"},
+        "team_id": {
+          "type": "string",
+          "description": "Team ID for access control"
+        },
+        "client_id": {
+          "type": "string",
+          "description": "Client ID for access control"
+        },
+        "job_posting_match_id": {
+          "type": "string",
+          "description": "Job posting match ID"
+        },
+        "clinician_id": {
+          "type": "string",
+          "description": "Clinician ID"
+        },
         "related_message_ids": {
           "type": "array",
-          "items": {"type": "string"},
+          "items": {
+            "type": "string"
+          },
           "description": "IDs of messages that triggered this decision"
         }
       },
-      "required": ["title", "body", "decision_type", "priority", "quoted_excerpts", "ai_reasoning", "team_id", "client_id", "job_posting_match_id", "clinician_id"]
+      "required": [
+        "title",
+        "body",
+        "decision_type",
+        "priority",
+        "quoted_excerpts",
+        "ai_reasoning",
+        "team_id",
+        "client_id",
+        "job_posting_match_id",
+        "clinician_id"
+      ]
     }
   },
   {
@@ -51,12 +87,29 @@
     "input_schema": {
       "type": "object",
       "properties": {
-        "decision_title": {"type": "string", "description": "Title of the decision to check"},
-        "decision_type": {"type": "string", "description": "Type of decision"},
-        "job_posting_match_id": {"type": "string", "description": "Job posting match ID"},
-        "time_window_hours": {"type": "number", "default": 24, "description": "Time window in hours to check for duplicates"}
+        "decision_title": {
+          "type": "string",
+          "description": "Title of the decision to check"
+        },
+        "decision_type": {
+          "type": "string",
+          "description": "Type of decision"
+        },
+        "job_posting_match_id": {
+          "type": "string",
+          "description": "Job posting match ID"
+        },
+        "time_window_hours": {
+          "type": "number",
+          "default": 24,
+          "description": "Time window in hours to check for duplicates"
+        }
       },
-      "required": ["decision_title", "decision_type", "job_posting_match_id"]
+      "required": [
+        "decision_title",
+        "decision_type",
+        "job_posting_match_id"
+      ]
     }
   },
   {
@@ -65,11 +118,24 @@
     "input_schema": {
       "type": "object",
       "properties": {
-        "status": {"type": "string", "description": "Analysis status"},
-        "analysis_completed": {"type": "boolean", "description": "Whether analysis completed successfully"},
-        "decisions_created": {"type": "number", "description": "Number of decisions created"}
+        "status": {
+          "type": "string",
+          "description": "Analysis status"
+        },
+        "analysis_completed": {
+          "type": "boolean",
+          "description": "Whether analysis completed successfully"
+        },
+        "decisions_created": {
+          "type": "number",
+          "description": "Number of decisions created"
+        }
       },
-      "required": ["status", "analysis_completed", "decisions_created"]
+      "required": [
+        "status",
+        "analysis_completed",
+        "decisions_created"
+      ]
     }
   }
 ]
